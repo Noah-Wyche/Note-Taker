@@ -13,6 +13,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
+// Route for serving the notes.html file
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'notes.html'));
+});
+
 // Route to serve the notes API endpoint
 app.get('/api/notes', (req, res) => {
     fs.readFile(__dirname + '/db/notes.json', 'utf8', (err, data) => {
