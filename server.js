@@ -5,17 +5,29 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Serve static files with correct MIME types
+app.use(express.static(path.join(__dirname, 'public'), {
+    // Set MIME types explicitly
+    setHeaders: (res, filePath) => {
+      if (filePath.endsWith('.css')) {
+        res.setHeader('Content-Type', 'text/css');
+      } else if (filePath.endsWith('.js')) {
+        res.setHeader('Content-Type', 'text/javascript');
+      }
+    }
+  }));
+  
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Route for serving the index.html file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Route for serving the notes.html file
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'notes.html'));
+    res.sendFile(path.join(__dirname, 'public', 'notes.html'));
 });
 
 // Route to serve the notes API endpoint
