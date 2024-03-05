@@ -7,7 +7,6 @@ This application is a note taking service desgined to take quick notes with titl
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)
 
@@ -21,8 +20,7 @@ This application is very intuitive and easy to use. After visiting the link the 
 Front end development was done by: @Xandromus on Github under the: miniature-eureka repository. All backend development was done by me!
 
 ## License
-
-This project is licensed under the [MIT License]([MIT License](https://opensource.org/licenses/MIT)).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Questions
 For any questions, please contact [Noah-Wyche](https://github.com/Noah-Wyche) via email at Noahwyche1@gmail.com.
